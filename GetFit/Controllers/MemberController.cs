@@ -102,36 +102,6 @@ public class MemberController(UserManager<IdentityUser> userManager,
     }
 
 
-    public IActionResult ViewMemberDeatails()
-    {
-        var membershipTypes = _gfContext.MembershipTypes.Select(mt => new SelectListItem
-        {
-            Text = mt.Name,
-            Value = mt.Id.ToString()
-        }).ToList();
-
-        var trainers = _gfContext.Trainers.Select(t => new SelectListItem
-        {
-            Text = t.Name,
-            Value = t.Id.ToString()
-        }).ToList();
-
-        var fitnessClasses = _gfContext.FitnessClasses.Select(fc => new SelectListItem
-        {
-            Text = fc.Name,
-            Value = fc.Id.ToString()
-        }).ToList();
-
-        var viewModel = new MemberViewModel
-        {
-            MembershipTypes = membershipTypes,
-            Trainers = trainers,
-            FitnessClasses = fitnessClasses
-        };
-
-        return View(viewModel);
-    }
-
     [HttpGet("Member/ViewMemberDetails")]
     public async Task<IActionResult> ViewMemberDetails(MemberDetailsModel model)
     {
