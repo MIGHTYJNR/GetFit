@@ -1,0 +1,11 @@
+﻿@model GetFit.Data.MemberDetail
+
+<h1>GetFit</h1>
+
+<h3>Welcome @(User!.Identity!.Name)</h3>
+
+<div>
+    <a asp-action="ViewMemberDetails" asp-controller="Member">View Details</a>
+    <a asp-action="Edit" asp-controller="Member">Edit</a>
+    <a asp-action="Delete" asp-controller="Member">Delete</a>
+</div>

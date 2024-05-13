@@ -1,0 +1,82 @@
+﻿@model GetFit.Models.Member.MemberDetailsModel
+
+@{
+    ViewData["Title"] = "My Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+
+<div class="ViewMemberDetails">
+        <div class="mb-3">
+            <label>Name:</label>
+            <div class="box">@Model.Name</div>
+        </div>
+
+        <div class="mb-3">
+            <label>Email:</label>
+            <div class="box">@Model.Email</div>
+        </div>
+
+        <div class="mb-3">
+            <label>Phone Number:</label>
+            <div class="box">@Model.PhoneNumber</div>
+        </div>
+
+        <div class="mb-3">
+            <label>Age:</label>
+            <div class="box">@Model.Age</div>
+        </div>
+
+        <div class="mb-3">
+            <label>Gender:</label>
+            <div class="box">@Model.Gender</div>
+        </div>
+
+        <div class="mb-3">
+            <label>Address:</label>
+            <div class="box">@Model.Address</div>
+        </div>
+
+        <div class="mb-3">
+            <label>Emergency Contact:</label>
+            <div class="box">@Model.EmergencyContact</div>
+        </div>
+
+        <div class="mb-3">
+            <label>Fitness Goals:</label>
+            <div class="box">@Model.FitnessGoals</div>
+        </div>
+
+        <div class="mb-3">
+            <label>Fitness Class:</label>
+            <div class="box">@Model.FitnessClasses</div>
+        </div>
+        <div class="mb-3">
+            <label class="box">Fitness Class:</label>
+            @foreach (var fitnessClasses in Model.FitnessClasses)
+            {
+                <div>@fitnessClasses</div>
+            }
+        </div>
+
+        <div class="mb-3">
+            <label>Membership Type:</label>
+            <div class="box">
+                @Model.MembershipTypeName <br />
+                Benefits: @Model.MembershipTypeBenefits.
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label>Preferred Trainer:</label>
+            <div class="box">
+                @Model.TrainerName <br />
+                Specialization: @Model.TrainerSpecialization
+            </div>
+        </div>
+</div>
+<div>
+    <a asp-action="Edit" asp-controller="Member">Edit</a>
+    <a asp-action="Delete" asp-controller="Member">Delete</a>
+</div>
