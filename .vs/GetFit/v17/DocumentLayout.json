@@ -1,54 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|c:\\users\\odus\\desktop\\mgqs\\webapplications\\getfit\\getfit\\controllers\\membercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|solutionrelative:getfit\\controllers\\membercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|c:\\users\\odus\\desktop\\mgqs\\webapplications\\getfit\\getfit\\models\\member\\memberdetailsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|solutionrelative:getfit\\models\\member\\memberdetailsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MemberDetailsModel.cs",
-              "DocumentMoniker": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Models\\Member\\MemberDetailsModel.cs",
-              "RelativeDocumentMoniker": "GetFit\\Models\\Member\\MemberDetailsModel.cs",
-              "ToolTip": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Models\\Member\\MemberDetailsModel.cs",
-              "RelativeToolTip": "GetFit\\Models\\Member\\MemberDetailsModel.cs",
-              "ViewState": "AQIAABAAAAAAKzMzMzMbwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T16:43:14.275Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MemberController.cs",
-              "DocumentMoniker": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Controllers\\MemberController.cs",
-              "RelativeDocumentMoniker": "GetFit\\Controllers\\MemberController.cs",
-              "ToolTip": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Controllers\\MemberController.cs",
-              "RelativeToolTip": "GetFit\\Controllers\\MemberController.cs",
-              "ViewState": "AQIAAF8AAAAAkJmZmZkuwGgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T16:32:38.577Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\GetFit",
+    "\\GetFit\\Controllers",
+    "\\GetFit\\Data",
+    "\\GetFit\\Models",
+    "\\GetFit\\Models\\Member",
+    "\\GetFit\\Views",
+    "\\GetFit\\Views\\Member"
+  ],
+  "SelectedNode": "\\GetFit\\Controllers\\MemberController.cs",
+  "PreviewInSolutionExplorer": false
+}

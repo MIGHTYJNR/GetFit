@@ -28,6 +28,7 @@ public class MemberViewModel
     public Gender Gender { get; set; } = default!;
 
     [Display(Name = "Address")]
+    [Required]
     public string Address { get; set; } = default!;
 
     [Display(Name = "Emergency Contact")]
@@ -41,15 +42,18 @@ public class MemberViewModel
     [Display(Name = "Membership Type")]
     [Required(ErrorMessage = "Please select a Membership Type")]
     public int MembershipTypeId { get; set; }
-    public List<SelectListItem> MembershipTypes { get; set; } = default!;
+    public List<SelectListItem> MembershipTypes { get; set; } = new List<SelectListItem>();
 
     [Display(Name = "Trainer")]
     [Required(ErrorMessage = "Please select a trainer")]
     public int TrainerId { get; set; }
-    public List<SelectListItem> Trainers { get; set; } = default!;
+    public List<SelectListItem> Trainers { get; set; } = new List<SelectListItem>();
 
     [Display(Name = "Classes")]
     [Required(ErrorMessage = "Please select at least one class")]
+    public int FitnessClassId { get; set; }
     public List<int> FitnessClassIds { get; set; } = new List<int>();
+
     public List<SelectListItem> FitnessClasses { get; set; } = new List<SelectListItem>();
+
 }

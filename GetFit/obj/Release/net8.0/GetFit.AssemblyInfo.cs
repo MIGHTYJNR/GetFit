@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GetFit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+348f128c293aa3ff4e3267781648e615a9bad652")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe616c7cd794cba974b16e13fe8f0b90182257fe")]
 [assembly: System.Reflection.AssemblyProductAttribute("GetFit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GetFit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

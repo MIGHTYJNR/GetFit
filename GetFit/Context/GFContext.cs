@@ -13,10 +13,10 @@ public class GFContext(DbContextOptions<GFContext> options) : IdentityDbContext(
         builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
 
-    public DbSet<MemberDetail> MemberDetails { get; set; }
+    public DbSet<Member> MemberDetails { get; set; }
     public DbSet<MembershipType> MembershipTypes { get; set; }
     public DbSet<Trainer> Trainers { get; set; }
     public DbSet<FitnessClass> FitnessClasses { get; set; }
-    public DbSet<MemberClass> MemberClasses { get; set; }
-    public DbSet<Payment> Payments { get; set; }
+    /*public DbSet<MemberClass> MemberClasses { get; set; }
+    public DbSet<Payment> Payments { get; set; }*/
 }

@@ -2,7 +2,7 @@
 
 namespace GetFit.Models.Auth;
 
-public class RegisterViewModel
+public class SignUpViewModel
 {
     [Required(ErrorMessage = "Username is required")]
     public string Username { get; set; } = default!;

@@ -7,7 +7,7 @@ using MySql.EntityFrameworkCore.Metadata;
 namespace GetFit.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class InitailCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -204,6 +204,31 @@ namespace GetFit.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "FitnessClasses",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(type: "longtext", nullable: false),
+                    Schedule = table.Column<string>(type: "longtext", nullable: false),
+                    Duration = table.Column<int>(type: "int", nullable: false),
+                    TrainerId = table.Column<int>(type: "int", nullable: false),
+                    CreatedOn = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    UpdatedOn = table.Column<DateTime>(type: "datetime(6)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FitnessClasses", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_FitnessClasses_Trainers_TrainerId",
+                        column: x => x.TrainerId,
+                        principalTable: "Trainers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySQL:Charset", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "MemberDetails",
                 columns: table => new
                 {
@@ -220,12 +245,19 @@ namespace GetFit.Migrations
                     FitnessGoals = table.Column<string>(type: "longtext", nullable: false),
                     MembershipTypeId = table.Column<int>(type: "int", nullable: false),
                     TrainerId = table.Column<int>(type: "int", nullable: false),
+                    FitnessClassId = table.Column<int>(type: "int", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UpdatedOn = table.Column<DateTime>(type: "datetime(6)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_MemberDetails", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_MemberDetails_FitnessClasses_FitnessClassId",
+                        column: x => x.FitnessClassId,
+                        principalTable: "FitnessClasses",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_MemberDetails_MembershipTypes_MembershipTypeId",
                         column: x => x.MembershipTypeId,
@@ -236,90 +268,6 @@ namespace GetFit.Migrations
                         name: "FK_MemberDetails_Trainers_TrainerId",
                         column: x => x.TrainerId,
                         principalTable: "Trainers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySQL:Charset", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "FitnessClasses",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext", nullable: false),
-                    Schedule = table.Column<string>(type: "longtext", nullable: false),
-                    Duration = table.Column<int>(type: "int", nullable: false),
-                    TrainerId = table.Column<int>(type: "int", nullable: false),
-                    MemberDetailId = table.Column<int>(type: "int", nullable: true),
-                    CreatedOn = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    UpdatedOn = table.Column<DateTime>(type: "datetime(6)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_FitnessClasses", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_FitnessClasses_MemberDetails_MemberDetailId",
-                        column: x => x.MemberDetailId,
-                        principalTable: "MemberDetails",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_FitnessClasses_Trainers_TrainerId",
-                        column: x => x.TrainerId,
-                        principalTable: "Trainers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySQL:Charset", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "Payments",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    PaymentDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    MemberId = table.Column<int>(type: "int", nullable: false),
-                    CreatedOn = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    UpdatedOn = table.Column<DateTime>(type: "datetime(6)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Payments", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Payments_MemberDetails_MemberId",
-                        column: x => x.MemberId,
-                        principalTable: "MemberDetails",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                })
-                .Annotation("MySQL:Charset", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "MemberClasses",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    MemberId = table.Column<int>(type: "int", nullable: false),
-                    FitnessClassId = table.Column<int>(type: "int", nullable: false),
-                    CreatedOn = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    UpdatedOn = table.Column<DateTime>(type: "datetime(6)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_MemberClasses", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_MemberClasses_FitnessClasses_FitnessClassId",
-                        column: x => x.FitnessClassId,
-                        principalTable: "FitnessClasses",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_MemberClasses_MemberDetails_MemberId",
-                        column: x => x.MemberId,
-                        principalTable: "MemberDetails",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -363,24 +311,14 @@ namespace GetFit.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_FitnessClasses_MemberDetailId",
-                table: "FitnessClasses",
-                column: "MemberDetailId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_FitnessClasses_TrainerId",
                 table: "FitnessClasses",
                 column: "TrainerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MemberClasses_FitnessClassId",
-                table: "MemberClasses",
+                name: "IX_MemberDetails_FitnessClassId",
+                table: "MemberDetails",
                 column: "FitnessClassId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_MemberClasses_MemberId",
-                table: "MemberClasses",
-                column: "MemberId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MemberDetails_MembershipTypeId",
@@ -391,11 +329,6 @@ namespace GetFit.Migrations
                 name: "IX_MemberDetails_TrainerId",
                 table: "MemberDetails",
                 column: "TrainerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Payments_MemberId",
-                table: "Payments",
-                column: "MemberId");
         }
 
         /// <inheritdoc />
@@ -417,10 +350,7 @@ namespace GetFit.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "MemberClasses");
-
-            migrationBuilder.DropTable(
-                name: "Payments");
+                name: "MemberDetails");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -430,9 +360,6 @@ namespace GetFit.Migrations
 
             migrationBuilder.DropTable(
                 name: "FitnessClasses");
-
-            migrationBuilder.DropTable(
-                name: "MemberDetails");
 
             migrationBuilder.DropTable(
                 name: "MembershipTypes");

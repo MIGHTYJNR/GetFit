@@ -8,75 +8,93 @@
 <hr />
 
 <div class="ViewMemberDetails">
+
         <div class="mb-3">
-            <label>Name:</label>
-            <div class="box">@Model.Name</div>
+            <label asp-for="Name" class="form-label"></label>
+        <output type="text" class="form-control" asp-for="Name">@Model.Name</output>
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
-            <label>Email:</label>
-            <div class="box">@Model.Email</div>
+            <label asp-for="Email" class="form-label"></label>
+            <output type="email" class="form-control" asp-for="Email">@Model.Email</output>
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
 
+        
         <div class="mb-3">
-            <label>Phone Number:</label>
-            <div class="box">@Model.PhoneNumber</div>
+            <label asp-for="PhoneNumber" class="form-label"></label>
+            <output type="text" class="form-control" asp-for="PhoneNumber">@Model.PhoneNumber</output>
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
         </div>
 
+        
         <div class="mb-3">
-            <label>Age:</label>
-            <div class="box">@Model.Age</div>
+            <label asp-for="Age" class="form-label"></label>
+            <output type="text" class="form-control" asp-for="Age">@Model.Age</output>
+            <span asp-validation-for="Age" class="text-danger"></span>
         </div>
 
+        
         <div class="mb-3">
-            <label>Gender:</label>
-            <div class="box">@Model.Gender</div>
+            <label asp-for="Gender" class="form-label"></label>
+            <output type="text" class="form-control" asp-for="Gender">@Model.Gender</output>
+            <span asp-validation-for="Gender" class="text-danger"></span>
         </div>
 
-        <div class="mb-3">
-            <label>Address:</label>
-            <div class="box">@Model.Address</div>
-        </div>
 
         <div class="mb-3">
-            <label>Emergency Contact:</label>
-            <div class="box">@Model.EmergencyContact</div>
+            <label asp-for="Address" class="form-label"></label>
+            <output type="text" class="form-control" asp-for="Address">@Model.Address</output>
+            <span asp-validation-for="Address" class="text-danger"></span>
         </div>
+        
 
         <div class="mb-3">
-            <label>Fitness Goals:</label>
-            <div class="box">@Model.FitnessGoals</div>
+            <label asp-for="EmergencyContact" class="form-label"></label>
+            <output type="text" class="form-control" asp-for="EmergencyContact">@Model.EmergencyContact</output>
+            <span asp-validation-for="EmergencyContact" class="text-danger"></span>
         </div>
+        
 
         <div class="mb-3">
-            <label>Fitness Class:</label>
-            <div class="box">@Model.FitnessClasses</div>
-        </div>
-        <div class="mb-3">
-            <label class="box">Fitness Class:</label>
-            @foreach (var fitnessClasses in Model.FitnessClasses)
-            {
-                <div>@fitnessClasses</div>
-            }
+            <label asp-for="FitnessGoals" class="form-label"></label>
+            <output type="text" class="form-control" asp-for="FitnessGoals">@Model.FitnessGoals</output>
+            <span asp-validation-for="FitnessGoals" class="text-danger"></span>
         </div>
 
+
         <div class="mb-3">
-            <label>Membership Type:</label>
-            <div class="box">
+            <label asp-for="MembershipTypeId" class="form-label"></label>
+            <output type="text" class="form-control" asp-for="MembershipTypeId">
                 @Model.MembershipTypeName <br />
                 Benefits: @Model.MembershipTypeBenefits.
-            </div>
+            </output>
+            <span asp-validation-for="MembershipTypeId" class="text-danger"></span>
         </div>
 
+
         <div class="mb-3">
-            <label>Preferred Trainer:</label>
-            <div class="box">
+            <label asp-for="TrainerId" class="form-label"></label>
+            <output type="text" class="form-control" asp-for="TrainerId">
                 @Model.TrainerName <br />
                 Specialization: @Model.TrainerSpecialization
-            </div>
+            </output>
+            <span asp-validation-for="TrainerId" class="text-danger"></span>
         </div>
+
+
+        <div class="mb-3">
+            <label asp-for="FitnessClassIds" class="form-label">Fitness Class</label>
+            <output type="text" class="form-control" asp-for="FitnessClassId">
+                @Model.FitnessClassName <br />
+                Schedule: @Model.FitnessClassSchedule.
+            </output>
+            <span asp-validation-for="FitnessClassIds" class="text-danger"></span>
+        </div>
+    
 </div>
 <div>
-    <a asp-action="Edit" asp-controller="Member">Edit</a>
-    <a asp-action="Delete" asp-controller="Member">Delete</a>
+    <a asp-action="UpdateMemberDetails" asp-controller="Member">Update</a>
+    <a asp-action="DeleteMember" asp-controller="Member">Delete</a>
 </div>

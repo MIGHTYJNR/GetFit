@@ -7,8 +7,14 @@ public class FitnessClass : BaseEntity
     public int Duration { get; set; }
 
     public int TrainerId { get; set; }
-    public Trainer Instructor { get; set; } = default!;
+    public Trainer Trainer { get; set; } = default!;
+    
+  
+    //public int MemberDetailId { get; set; } = default!;
+ //   public Member Member { get; set; } = default!;
 
-    public ICollection<MemberClass> MemberClasses { get; set; } = default!;
+    /*public int MemberDetailId { get; set; } = default!;*/
+    /*public Member Member { get; set; } = default!;*/
 
+    public ICollection<Member> Members{ get; set; } = default!;
 }

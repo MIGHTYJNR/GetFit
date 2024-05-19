@@ -7,5 +7,5 @@ public class MembershipType : BaseEntity
     public string Benefits { get; set; } = default!;
     public int Duration { get; set; }
 
-    public ICollection<MemberDetail> Members { get; set; } = default!;
+    public ICollection<Member> Members { get; set; } = default!;
 }

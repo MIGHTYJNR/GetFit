@@ -1,13 +1,13 @@
-﻿@model GetFit.Models.Auth.RegisterViewModel
+﻿@model GetFit.Models.Auth.SignUpViewModel
 
 @{
-    ViewData["Title"] = "Membership Registration";
+    ViewData["Title"] = "Sign Up";
 }
 
 <h2>@ViewData["Title"]</h2>
 <hr>
 
-<form asp-action="Register">
+<form asp-action="SignUp">
 
     <div class="mb-3">
         <label asp-for="Username" class="form-label"></label>
@@ -30,6 +30,6 @@
         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-success">Register</button>
+    <button type="submit" class="btn btn-success">Sign Up</button>
 </form>
 

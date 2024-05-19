@@ -34,14 +34,16 @@ public class MemberDetailsModel
     public string FitnessGoals { get; set; } = default!;
 
     [Display(Name = "Fitness Class")]
-    /*  public List<int> FitnessClasses { get; set; } = new List<int>();*/
-    public List<string> FitnessClasses { get; set; } = [];
+    public string FitnessClassName { get; set; } = default!;
+    public List<int> FitnessClassIds { get; set; } = new List<int>();
 
     [Display(Name = "Membership Type")]
     public string MembershipTypeId { get; set; } = default!;
 
     [Display(Name = "Preferred Trainer")]
     public string TrainerId { get; set; } = default!;
+
+    public string FitnessClassSchedule { get; set; } = default!;
 
     public string MembershipTypeName { get; set; } = default!;
     public string MembershipTypeBenefits { get; set; } = default!;

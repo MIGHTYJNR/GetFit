@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GetFit.Migrations
 {
     [DbContext(typeof(GFContext))]
-    [Migration("20240508073858_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240518084143_InitailCreate")]
+    partial class InitailCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,9 +34,6 @@ namespace GetFit.Migrations
                     b.Property<int>("Duration")
                         .HasColumnType("int");
 
-                    b.Property<int?>("MemberDetailId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -53,41 +50,12 @@ namespace GetFit.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MemberDetailId");
-
                     b.HasIndex("TrainerId");
 
                     b.ToTable("FitnessClasses");
                 });
 
-            modelBuilder.Entity("GetFit.Data.MemberClass", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("FitnessClassId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MemberId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("UpdatedOn")
-                        .HasColumnType("datetime(6)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FitnessClassId");
-
-                    b.HasIndex("MemberId");
-
-                    b.ToTable("MemberClasses");
-                });
-
-            modelBuilder.Entity("GetFit.Data.MemberDetail", b =>
+            modelBuilder.Entity("GetFit.Data.Member", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -110,6 +78,9 @@ namespace GetFit.Migrations
                     b.Property<string>("EmergencyContact")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<int>("FitnessClassId")
+                        .HasColumnType("int");
 
                     b.Property<string>("FitnessGoals")
                         .IsRequired()
@@ -140,6 +111,8 @@ namespace GetFit.Migrations
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FitnessClassId");
 
                     b.HasIndex("MembershipTypeId");
 
@@ -177,34 +150,6 @@ namespace GetFit.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MembershipTypes");
-                });
-
-            modelBuilder.Entity("GetFit.Data.Payment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("MemberId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("PaymentDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<DateTime?>("UpdatedOn")
-                        .HasColumnType("datetime(6)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MemberId");
-
-                    b.ToTable("Payments");
                 });
 
             modelBuilder.Entity("GetFit.Data.Trainer", b =>
@@ -426,40 +371,23 @@ namespace GetFit.Migrations
 
             modelBuilder.Entity("GetFit.Data.FitnessClass", b =>
                 {
-                    b.HasOne("GetFit.Data.MemberDetail", null)
-                        .WithMany("FitnessClasses")
-                        .HasForeignKey("MemberDetailId");
-
-                    b.HasOne("GetFit.Data.Trainer", "Instructor")
+                    b.HasOne("GetFit.Data.Trainer", "Trainer")
                         .WithMany("FitnessClasses")
                         .HasForeignKey("TrainerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Instructor");
+                    b.Navigation("Trainer");
                 });
 
-            modelBuilder.Entity("GetFit.Data.MemberClass", b =>
+            modelBuilder.Entity("GetFit.Data.Member", b =>
                 {
                     b.HasOne("GetFit.Data.FitnessClass", "FitnessClass")
-                        .WithMany("MemberClasses")
+                        .WithMany("Members")
                         .HasForeignKey("FitnessClassId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GetFit.Data.MemberDetail", "Member")
-                        .WithMany()
-                        .HasForeignKey("MemberId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("FitnessClass");
-
-                    b.Navigation("Member");
-                });
-
-            modelBuilder.Entity("GetFit.Data.MemberDetail", b =>
-                {
                     b.HasOne("GetFit.Data.MembershipType", "MembershipType")
                         .WithMany("Members")
                         .HasForeignKey("MembershipTypeId")
@@ -472,20 +400,11 @@ namespace GetFit.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("FitnessClass");
+
                     b.Navigation("MembershipType");
 
                     b.Navigation("PreferredTrainer");
-                });
-
-            modelBuilder.Entity("GetFit.Data.Payment", b =>
-                {
-                    b.HasOne("GetFit.Data.MemberDetail", "Member")
-                        .WithMany("Payments")
-                        .HasForeignKey("MemberId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Member");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -541,14 +460,7 @@ namespace GetFit.Migrations
 
             modelBuilder.Entity("GetFit.Data.FitnessClass", b =>
                 {
-                    b.Navigation("MemberClasses");
-                });
-
-            modelBuilder.Entity("GetFit.Data.MemberDetail", b =>
-                {
-                    b.Navigation("FitnessClasses");
-
-                    b.Navigation("Payments");
+                    b.Navigation("Members");
                 });
 
             modelBuilder.Entity("GetFit.Data.MembershipType", b =>

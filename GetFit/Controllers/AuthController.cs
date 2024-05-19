@@ -61,13 +61,13 @@ IHttpContextAccessor httpContextAccessor) : Controller
     }
 
     [RedirectAuthenticatedUsers]
-    public IActionResult Register()
+    public IActionResult SignUp()
     {
         return View();
     }
 
-    [HttpPost("/Auth/Register")]
-    public async Task<IActionResult> Register(RegisterViewModel model)
+    [HttpPost("/Auth/SignUp")]
+    public async Task<IActionResult> SignUp(SignUpViewModel model)
     {
         if (ModelState.IsValid)
         {

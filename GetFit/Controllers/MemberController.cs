@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AspNetCore;
+using System.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace GetFit.Controllers;
 
@@ -65,6 +67,7 @@ public class MemberController(UserManager<IdentityUser> userManager,
     public async Task<IActionResult> MemberRegistration(MemberViewModel model)
     {
         var memberExist = await _gfContext.MemberDetails.AnyAsync(x => x.Name == model.Name || x.Email == model.Email);
+
         var userDetail = await Helper.GetCurrentUserIdAsync(_httpContextAccessor, _userManager);
 
         if (memberExist)
@@ -73,7 +76,7 @@ public class MemberController(UserManager<IdentityUser> userManager,
             return View(model);
         }
 
-        var member = new MemberDetail
+        var member = new Member
         {
             UserId = userDetail.userId,
             Name = model.Name,
@@ -85,7 +88,8 @@ public class MemberController(UserManager<IdentityUser> userManager,
             EmergencyContact = model.EmergencyContact,
             FitnessGoals = model.FitnessGoals,
             MembershipTypeId = model.MembershipTypeId,
-            TrainerId = model.TrainerId
+            TrainerId = model.TrainerId,
+            FitnessClassId = model.FitnessClassId
         };
 
         await _gfContext.AddAsync(member);
@@ -103,15 +107,15 @@ public class MemberController(UserManager<IdentityUser> userManager,
 
 
     [HttpGet("Member/ViewMemberDetails")]
-    public async Task<IActionResult> ViewMemberDetails(MemberDetailsModel model)
+    public async Task<IActionResult> ViewMemberDetails()
     {
         var user = await _userManager.GetUserAsync(User);
 
         var member = await _gfContext.MemberDetails
             .Include(m => m.MembershipType)
             .Include(m => m.PreferredTrainer)
+            .Include(m => m.FitnessClass)
             .FirstOrDefaultAsync(m => m.UserId == user!.Id);
-
 
 
         if (member != null)
@@ -126,10 +130,11 @@ public class MemberController(UserManager<IdentityUser> userManager,
                 Address = member.Address,
                 EmergencyContact = member.EmergencyContact,
                 FitnessGoals = member.FitnessGoals,
-                FitnessClasses = member.FitnessClasses.Select(fc => fc.Name).ToList(), //implicit convert error
-                MembershipTypeId = member.MembershipTypeId.ToString(), //implicit convert error
+                MembershipTypeId = member.MembershipTypeId.ToString(),
                 TrainerId = member.TrainerId.ToString(),
+                FitnessClassName = member.FitnessClass.Name.ToUpper(),
 
+                FitnessClassSchedule = member.FitnessClass.Schedule,
                 MembershipTypeName = member.MembershipType.Name.ToUpper(),
                 MembershipTypeBenefits = member.MembershipType.Benefits,
                 TrainerName = member.PreferredTrainer.Name.ToUpper(),
@@ -142,118 +147,110 @@ public class MemberController(UserManager<IdentityUser> userManager,
         else
         {
             _notyfService.Error("Member details not found");
-            return RedirectToAction("Index", "Member");
+            return RedirectToAction("MemberRegistration", "Member");
         }
     }
 
-
-    public async Task<IActionResult> EditMemberDetails(int id)
+    public IActionResult UpdateMemberDetails()
     {
-        var member = await _gfContext.MemberDetails.FindAsync(id);
-
-        if (member == null)
+        var membershipTypes = _gfContext.MembershipTypes.Select(mt => new SelectListItem
         {
-            _notyfService.Error("Member details not found");
-            return RedirectToAction("Index", "Member");
-        }
+            Text = mt.Name,
+            Value = mt.Id.ToString()
+        }).ToList();
 
-        var model = new MemberViewModel
+        var trainers = _gfContext.Trainers.Select(t => new SelectListItem
         {
-            Name = member.Name,
-            Email = member.Email,
-            PhoneNumber = member.PhoneNumber,
-            Age = member.Age,
-            Gender = member.Gender,
-            Address = member.Address,
-            EmergencyContact = member.EmergencyContact,
-            FitnessGoals = member.FitnessGoals,
-            MembershipTypeId = member.MembershipTypeId,
-            TrainerId = member.TrainerId,
-            FitnessClasses = [.. _gfContext.FitnessClasses.Select(fc => new SelectListItem
-            {
-                Text = fc.Name,
-                Value = fc.Id.ToString(),
-                Selected = fc.Id == member.TrainerId
-            })],
-            MembershipTypes = [.. _gfContext.MembershipTypes.Select(mt => new SelectListItem
-            {
-                Text = mt.Name,
-                Value = mt.Id.ToString(),
-                Selected = mt.Id == member.MembershipTypeId
-            })],
-            Trainers = [.. _gfContext.Trainers.Select(t => new SelectListItem
-            {
-                Text = t.Name,
-                Value = t.Id.ToString(),
-                Selected = t.Id == member.TrainerId
-            })]
+            Text = t.Name,
+            Value = t.Id.ToString()
+        }).ToList();
+
+        var fitnessClasses = _gfContext.FitnessClasses.Select(fc => new SelectListItem
+        {
+            Text = fc.Name,
+            Value = fc.Id.ToString()
+        }).ToList();
+
+        var ViewModel = new MemberViewModel
+        {
+            MembershipTypes = membershipTypes,
+            Trainers = trainers,
+            FitnessClasses = fitnessClasses
         };
 
-        return View(model);
+        return View(ViewModel);
+        //return View();
     }
 
     [HttpPost]
-    public async Task<IActionResult> EditMemberDetails(string phoneNumber, MemberViewModel model, string @string)
+    public async Task<IActionResult> UpdateMemberDetails(MemberViewModel model)
     {
-        if (@string != model.PhoneNumber)
+        if (ModelState.IsValid)
         {
-            _notyfService.Error("Invalid member details");
-            return RedirectToAction("Index", "Member");
+            var user = await _userManager.GetUserAsync(User);
+
+            var member = await _gfContext.MemberDetails
+                .FirstOrDefaultAsync(m => m.UserId == user!.Id);
+
+            if (member != null)
+            {
+                member.Name = model.Name;
+                member.Email = model.Email;
+                member.PhoneNumber = model.PhoneNumber;
+                member.Age = model.Age;
+                member.Gender = model.Gender;
+                member.Address = model.Address;
+                member.EmergencyContact = model.EmergencyContact;
+                member.FitnessGoals = model.FitnessGoals;
+                member.MembershipTypeId = model.MembershipTypeId;
+                member.TrainerId = model.TrainerId;
+                member.FitnessClassId = model.FitnessClassId;
+
+                _gfContext.Update(member);
+                await _gfContext.SaveChangesAsync();
+
+                _notyfService.Success("Member details updated successfully");
+                return RedirectToAction("Index", "Member");
+            }
+            else
+            {
+                _notyfService.Error("Member details not found");
+                return RedirectToAction("Index", "Member");
+            }
         }
 
-        var member = await _gfContext.MemberDetails.FindAsync(phoneNumber);
-
-        if (member == null)
-        {
-            _notyfService.Error("Member details not found");
-            return RedirectToAction("Index", "Member");
-        }
-
-        member.Name = model.Name;
-        member.Email = model.Email;
-        member.PhoneNumber = model.PhoneNumber;
-        member.Age = model.Age;
-        member.Gender = model.Gender;
-        member.Address = model.Address;
-        member.EmergencyContact = model.EmergencyContact;
-        member.FitnessGoals = model.FitnessGoals;
-        member.MembershipTypeId = model.MembershipTypeId;
-        member.TrainerId = model.TrainerId;
-
-        _gfContext.Update(member);
-        var result = await _gfContext.SaveChangesAsync();
-
-        if (result > 0)
-        {
-            _notyfService.Success("Member details updated successfully");
-            return RedirectToAction("Index", "Member");
-        }
-
-        _notyfService.Error("An error occurred while updating member details");
+        _notyfService.Error("Invalid model state");
         return View(model);
     }
 
 
-    public async Task<IActionResult> DeleteMemberDetails(int id)
+    public IActionResult DeleteMember()
     {
-        var member = await _gfContext.MemberDetails.FindAsync(id);
+        return View();
+    }
 
-        if (member == null)
+    [HttpPost]
+    public async Task<IActionResult> DeleteMember(MemberDetailsModel model)
+    {
+        var user = await _userManager.GetUserAsync(User);
+
+        var member = await _gfContext.MemberDetails
+            .FirstOrDefaultAsync(m => m.UserId == user!.Id);
+
+        if (member != null)
         {
-            _notyfService.Error("Member details not found");
-            return RedirectToAction("Index", "Member");
-        }
+            _gfContext.Remove(member);
+            await _gfContext.SaveChangesAsync();
 
-        _gfContext.Remove(member);
-        var result = await _gfContext.SaveChangesAsync();
-
-        if (result > 0)
-        {
             _notyfService.Success("Member details deleted successfully");
             return RedirectToAction("MemberRegistration", "Member");
         }
+        else
+        {
+            _notyfService.Error("Member details not found");
+            return RedirectToAction("DeleteMember", "Member");
+        }
 
-        _notyfService.Error("An error occurred while deleting member details");
-        return RedirectToAction("Index", "Member");
+        
     }
 }
