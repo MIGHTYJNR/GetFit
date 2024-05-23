@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GetFit.Models.Member;
 
-public class MemberViewModel
+public class MemberModel
 {
     [Display(Name = "FullName")]
     [Required]

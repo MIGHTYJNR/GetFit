@@ -1,4 +1,4 @@
-﻿@model GetFit.Models.Member.MemberViewModel
+﻿@model GetFit.Models.Member.MemberModel
 
 @{
     ViewData["Title"] = "Membership Registration";
@@ -15,11 +15,13 @@
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
+
     <div class="mb-3">
         <label asp-for="Email" class="form-label"></label>
         <input type="email" class="form-control" asp-for="Email">
         <span asp-validation-for="Email" class="text-danger"></span>
     </div>
+
 
     <div class="mb-3">
         <label asp-for="PhoneNumber" class="form-label"></label>
@@ -27,11 +29,13 @@
         <span asp-validation-for="PhoneNumber" class="text-danger"></span>
     </div>
 
+
     <div class="mb-3">
         <label asp-for="Age" class="form-label"></label>
         <input type="text" class="form-control" asp-for="Age">
         <span asp-validation-for="Age" class="text-danger"></span>
     </div>
+
 
     <div class="mb-3">
         <label asp-for="Gender" class="form-label"></label>
@@ -45,11 +49,13 @@
         <span asp-validation-for="Gender" class="text-danger"></span>
     </div>
 
+
     <div class="mb-3">
         <label asp-for="Address" class="form-label"></label>
         <input type="text" class="form-control" asp-for="Address">
         <span asp-validation-for="Address" class="text-danger"></span>
     </div>
+
 
     <div class="mb-3">
         <label asp-for="EmergencyContact" class="form-label"></label>
@@ -57,11 +63,13 @@
         <span asp-validation-for="EmergencyContact" class="text-danger"></span>
     </div>
 
+
     <div class="mb-3">
         <label asp-for="FitnessGoals" class="form-label"></label>
         <input type="text" class="form-control" asp-for="FitnessGoals">
         <span asp-validation-for="FitnessGoals" class="text-danger"></span>
     </div>
+
 
     <div class="mb-3">
         <label asp-for="MembershipTypeId" class="form-label"></label>
@@ -75,6 +83,7 @@
         <span asp-validation-for="MembershipTypeId" class="text-danger"></span>
     </div>
 
+
     <div class="mb-3">
         <label asp-for="TrainerId" class="form-label"></label>
         <select asp-for="TrainerId" class="form-control">
@@ -86,6 +95,7 @@
         </select>
         <span asp-validation-for="TrainerId" class="text-danger"></span>
     </div>
+
 
     <div class="mb-3">
         <label asp-for="FitnessClassIds" class="form-label"></label>

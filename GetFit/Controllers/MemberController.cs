@@ -53,7 +53,7 @@ public class MemberController(UserManager<IdentityUser> userManager,
             Value = fc.Id.ToString()
         }).ToList();
 
-        var viewModel = new MemberViewModel
+        var viewModel = new MemberModel
         {
             MembershipTypes = membershipTypes,
             Trainers = trainers,
@@ -64,7 +64,7 @@ public class MemberController(UserManager<IdentityUser> userManager,
     }
 
     [HttpPost("Member/MemberRegistration")]
-    public async Task<IActionResult> MemberRegistration(MemberViewModel model)
+    public async Task<IActionResult> MemberRegistration(MemberModel model)
     {
         var memberExist = await _gfContext.MemberDetails.AnyAsync(x => x.Name == model.Name || x.Email == model.Email);
 
@@ -97,11 +97,11 @@ public class MemberController(UserManager<IdentityUser> userManager,
 
         if (result > 0)
         {
-            _notyfService.Success("Member detail registered successfully");
+            _notyfService.Success("Member registered successfully");
             return RedirectToAction("Index", "Member");
         }
 
-        _notyfService.Error("An error occurred while creating member detail");
+        _notyfService.Error("An error occurred while creating membership");
         return View();
     }
 
@@ -171,7 +171,7 @@ public class MemberController(UserManager<IdentityUser> userManager,
             Value = fc.Id.ToString()
         }).ToList();
 
-        var ViewModel = new MemberViewModel
+        var ViewModel = new MemberModel
         {
             MembershipTypes = membershipTypes,
             Trainers = trainers,
@@ -183,7 +183,7 @@ public class MemberController(UserManager<IdentityUser> userManager,
     }
 
     [HttpPost]
-    public async Task<IActionResult> UpdateMemberDetails(MemberViewModel model)
+    public async Task<IActionResult> UpdateMemberDetails(MemberModel model)
     {
         if (ModelState.IsValid)
         {
@@ -219,7 +219,7 @@ public class MemberController(UserManager<IdentityUser> userManager,
             }
         }
 
-        _notyfService.Error("Invalid model state");
+        _notyfService.Error("An error occurred while updating detail");
         return View(model);
     }
 
@@ -251,6 +251,6 @@ public class MemberController(UserManager<IdentityUser> userManager,
             return RedirectToAction("DeleteMember", "Member");
         }
 
-        
+
     }
 }
