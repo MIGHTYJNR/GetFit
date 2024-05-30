@@ -74,7 +74,7 @@
     <div class="mb-3">
         <label asp-for="MembershipTypeId" class="form-label"></label>
         <select asp-for="MembershipTypeId" class="form-control">
-            <option value="" selected hidden disabled>Select Membership Type</option>
+            <option value="" selected hidden disabled>Select a Membership Type</option>
             @foreach (var item in Model.MembershipTypes)
             {
                 <option value="@item.Value">@item.Text</option>
@@ -87,7 +87,7 @@
     <div class="mb-3">
         <label asp-for="TrainerId" class="form-label"></label>
         <select asp-for="TrainerId" class="form-control">
-            <option value="" selected hidden disabled>Select Trainer</option>
+            <option value="" selected hidden disabled>Select a Prefered Trainer</option>
             @foreach (var item in Model.Trainers)
             {
                 <option value="@item.Value">@item.Text</option>
@@ -98,9 +98,9 @@
 
 
     <div class="mb-3">
-        <label asp-for="FitnessClassIds" class="form-label"></label>
+        <label asp-for="FitnessClassIds" class="form-label">Fitness Classes</label>
         <select asp-for="FitnessClassId" class="form-control">
-            <option value="" selected hidden disabled>Select Fitness Class</option>
+            <option value="" selected hidden disabled>Select a Fitness Class</option>
             @foreach (var item in Model.FitnessClasses)
             {
                 <option value="@item.Value">@item.Text</option>

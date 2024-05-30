@@ -3,40 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|c:\\users\\odus\\desktop\\mgqs\\webapplications\\getfit\\getfit\\controllers\\administrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|solutionrelative:getfit\\controllers\\administrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|c:\\users\\odus\\desktop\\mgqs\\webapplications\\getfit\\getfit\\controllers\\membercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|solutionrelative:getfit\\controllers\\membercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|c:\\users\\odus\\desktop\\mgqs\\webapplications\\getfit\\getfit\\views\\administration\\editusersinrole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|solutionrelative:getfit\\views\\administration\\editusersinrole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|c:\\users\\odus\\desktop\\mgqs\\webapplications\\getfit\\getfit\\viewmodel\\userroleviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|solutionrelative:getfit\\viewmodel\\userroleviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|c:\\users\\odus\\desktop\\mgqs\\webapplications\\getfit\\getfit\\viewmodel\\editroleviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|solutionrelative:getfit\\viewmodel\\editroleviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|c:\\users\\odus\\desktop\\mgqs\\webapplications\\getfit\\getfit\\views\\administration\\editrole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|solutionrelative:getfit\\views\\administration\\editrole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|c:\\users\\odus\\desktop\\mgqs\\webapplications\\getfit\\getfit\\views\\member\\deletemember.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|solutionrelative:getfit\\views\\member\\deletemember.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|c:\\users\\odus\\desktop\\mgqs\\webapplications\\getfit\\getfit\\views\\administration\\listroles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|solutionrelative:getfit\\views\\administration\\listroles.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|c:\\users\\odus\\desktop\\mgqs\\webapplications\\getfit\\getfit\\viewmodel\\createroleviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|solutionrelative:getfit\\viewmodel\\createroleviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|c:\\users\\odus\\desktop\\mgqs\\webapplications\\getfit\\getfit\\controllers\\administrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|solutionrelative:getfit\\controllers\\administrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|c:\\users\\odus\\desktop\\mgqs\\webapplications\\getfit\\getfit\\views\\administration\\createrole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|solutionrelative:getfit\\views\\administration\\createrole.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|c:\\users\\odus\\desktop\\mgqs\\webapplications\\getfit\\getfit\\views\\shared\\notfound.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|solutionrelative:getfit\\views\\shared\\notfound.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|c:\\users\\odus\\desktop\\mgqs\\webapplications\\getfit\\getfit\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E26A63FE-9CF1-4EE2-826E-B1C12B24A211}|GetFit\\GetFit.csproj|solutionrelative:getfit\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,127 +30,75 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DeleteMember.cshtml",
+              "DocumentMoniker": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Views\\Member\\DeleteMember.cshtml",
+              "RelativeDocumentMoniker": "GetFit\\Views\\Member\\DeleteMember.cshtml",
+              "ToolTip": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Views\\Member\\DeleteMember.cshtml",
+              "RelativeToolTip": "GetFit\\Views\\Member\\DeleteMember.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-30T00:46:14.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ListRoles.cshtml",
+              "DocumentMoniker": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Views\\Administration\\ListRoles.cshtml",
+              "RelativeDocumentMoniker": "GetFit\\Views\\Administration\\ListRoles.cshtml",
+              "ToolTip": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Views\\Administration\\ListRoles.cshtml",
+              "RelativeToolTip": "GetFit\\Views\\Administration\\ListRoles.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-30T00:38:26.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "GetFit\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "GetFit\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T00:09:44.372Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EditUsersInRole.cshtml",
-              "DocumentMoniker": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Views\\Administration\\EditUsersInRole.cshtml",
-              "RelativeDocumentMoniker": "GetFit\\Views\\Administration\\EditUsersInRole.cshtml",
-              "ToolTip": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Views\\Administration\\EditUsersInRole.cshtml",
-              "RelativeToolTip": "GetFit\\Views\\Administration\\EditUsersInRole.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-23T17:07:53.069Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "AdministrationController.cs",
               "DocumentMoniker": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Controllers\\AdministrationController.cs",
               "RelativeDocumentMoniker": "GetFit\\Controllers\\AdministrationController.cs",
               "ToolTip": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Controllers\\AdministrationController.cs",
               "RelativeToolTip": "GetFit\\Controllers\\AdministrationController.cs",
-              "ViewState": "AQIAAJoAAAAA+jIzM7MSwLEAAAANAAAA",
+              "ViewState": "AQIAAA0BAAAAAAAAAAAEwCQBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-22T10:58:13.505Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserRoleViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\ViewModel\\UserRoleViewModel.cs",
-              "RelativeDocumentMoniker": "GetFit\\ViewModel\\UserRoleViewModel.cs",
-              "ToolTip": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\ViewModel\\UserRoleViewModel.cs",
-              "RelativeToolTip": "GetFit\\ViewModel\\UserRoleViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "MemberController.cs",
+              "DocumentMoniker": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Controllers\\MemberController.cs",
+              "RelativeDocumentMoniker": "GetFit\\Controllers\\MemberController.cs",
+              "ToolTip": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Controllers\\MemberController.cs",
+              "RelativeToolTip": "GetFit\\Controllers\\MemberController.cs",
+              "ViewState": "AQIAAMcAAAAApGZmZmYGwLAAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T16:38:58.546Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EditRoleViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\ViewModel\\EditRoleViewModel.cs",
-              "RelativeDocumentMoniker": "GetFit\\ViewModel\\EditRoleViewModel.cs",
-              "ToolTip": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\ViewModel\\EditRoleViewModel.cs",
-              "RelativeToolTip": "GetFit\\ViewModel\\EditRoleViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T12:42:27.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EditRole.cshtml",
-              "DocumentMoniker": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Views\\Administration\\EditRole.cshtml",
-              "RelativeDocumentMoniker": "GetFit\\Views\\Administration\\EditRole.cshtml",
-              "ToolTip": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Views\\Administration\\EditRole.cshtml",
-              "RelativeToolTip": "GetFit\\Views\\Administration\\EditRole.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-23T15:14:26.133Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ListRoles.cshtml",
-              "DocumentMoniker": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Views\\Administration\\ListRoles.cshtml",
-              "RelativeDocumentMoniker": "GetFit\\Views\\Administration\\ListRoles.cshtml",
-              "ToolTip": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Views\\Administration\\ListRoles.cshtml",
-              "RelativeToolTip": "GetFit\\Views\\Administration\\ListRoles.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-23T11:32:40.165Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CreateRoleViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\ViewModel\\CreateRoleViewModel.cs",
-              "RelativeDocumentMoniker": "GetFit\\ViewModel\\CreateRoleViewModel.cs",
-              "ToolTip": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\ViewModel\\CreateRoleViewModel.cs",
-              "RelativeToolTip": "GetFit\\ViewModel\\CreateRoleViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T11:47:48.531Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CreateRole.cshtml",
-              "DocumentMoniker": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Views\\Administration\\CreateRole.cshtml",
-              "RelativeDocumentMoniker": "GetFit\\Views\\Administration\\CreateRole.cshtml",
-              "ToolTip": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Views\\Administration\\CreateRole.cshtml",
-              "RelativeToolTip": "GetFit\\Views\\Administration\\CreateRole.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-22T17:24:02.851Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "NotFound.cshtml",
-              "DocumentMoniker": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Views\\Shared\\NotFound.cshtml",
-              "RelativeDocumentMoniker": "GetFit\\Views\\Shared\\NotFound.cshtml",
-              "ToolTip": "C:\\Users\\ODUS\\Desktop\\MGQS\\WebApplications\\GetFit\\GetFit\\Views\\Shared\\NotFound.cshtml",
-              "RelativeToolTip": "GetFit\\Views\\Shared\\NotFound.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-23T13:02:30.678Z",
+              "WhenOpened": "2024-05-29T21:04:06.947Z",
               "EditorCaption": ""
             }
           ]

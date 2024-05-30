@@ -4,14 +4,10 @@ using GetFit.Models.Member;
 using GetFit.Utility;
 using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using AspNetCore;
-using System.Linq;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace GetFit.Controllers;
 
@@ -179,7 +175,6 @@ public class MemberController(UserManager<IdentityUser> userManager,
         };
 
         return View(ViewModel);
-        //return View();
     }
 
     [HttpPost]
@@ -215,7 +210,7 @@ public class MemberController(UserManager<IdentityUser> userManager,
             else
             {
                 _notyfService.Error("Member details not found");
-                return RedirectToAction("Index", "Member");
+                return RedirectToAction("MemberRegistration", "Member");
             }
         }
 
@@ -248,7 +243,7 @@ public class MemberController(UserManager<IdentityUser> userManager,
         else
         {
             _notyfService.Error("Member details not found");
-            return RedirectToAction("DeleteMember", "Member");
+            return RedirectToAction("MemberRegistration", "Member");
         }
 
 

@@ -1,0 +1,55 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@model IEnumerable<IdentityUser>
+
+@{
+    ViewData["Title"] = "All Users";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+
+@if (Model.Any())
+{
+    <a asp-controller="Auth" asp-action="SignUp" class="btn btn-primary mb-3">
+        Add new user
+    </a>
+
+    foreach (var identityUser in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-header">
+                User Id : @identityUser.Id
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@identityUser.NormalizedUserName</h5>
+                <h5 class="card-title">@identityUser.Email</h5>
+            </div>
+            <div class="card-footer">
+                <form asp-action="DeleteUser" asp-route-id="@identityUser.Id" method="post">
+                    <a asp-action="EditUser" asp-controller="Administration"
+                       asp-route-id="@identityUser.Id" class="btn btn-primary">Edit</a>
+                    <button type="submit" class="btn btn-danger"
+                    onclick="return confirm('Are you sure you want to delete user : @identityUser.UserName')">
+                    Delete
+                    </button>
+                </form>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="card">
+        <div class="card-header">
+            No user added yet
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                Use the button below to add a new user
+            </h5>
+            <a class="btn btn-primary mb-3" style="width:auto" asp-controller="Auth"
+               asp-action="SignUp">Add new user</a>
+        </div>
+    </div>
+}
